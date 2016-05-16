@@ -1,0 +1,21 @@
+{
+  "name": "pwo-hardware",
+  "version": "1.0.0",
+  "description": "Raspberry PI plant watering aplication",
+  "main": "index.js",
+  "dependencies": {
+    "johnny-five": "*",
+    "raspi-io": "*",
+    "node-dht-sensor": "*",
+    "express": "*",
+    "serve-static": "*",
+    "socket.io": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yaroslav Zaklinskyi",
+  "license": "ISC"
+}
+

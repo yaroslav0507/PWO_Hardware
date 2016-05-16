@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PWO API Client</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+    var socket = io.connect('');
+
+    function startServo(deg) {
+        socket.emit('start.servo', deg);
+    }
+
+    function onButtonClicked(){
+        var angle = document.getElementById('angle').value;
+        startServo(angle);
+    }
+
+</script>
+    <input type="number" min="0" max="180" id="angle" placeholder="Enter angle">
+    <button onclick="onButtonClicked()">Rotate servo</button>
+</body>
+</html>
