@@ -18,6 +18,10 @@
 
     var socket = io.connect('');
 
+    socket.on('DHT_SENSOR_DATA', function(data){
+        console.log(data);
+    });
+
     function startServo(deg) {
         socket.emit('start.servo', deg);
     }
