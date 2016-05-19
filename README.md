@@ -1,9 +1,11 @@
 ## Raspberry PI watering system
-<img align="left" src="https://www.dropbox.com/s/yy2x7xsqu8gp6v7/PWO_Logo.jpg?dl=1" alt="JavaScript Robotics" height="160px">
+<img align="left" src="https://www.dropbox.com/s/yy2x7xsqu8gp6v7/PWO_Logo.jpg?dl=1" alt="JavaScript Robotics" height="180px">
     There is much talk about the Internet of Things, about possibilities to control real devices remotely across existing network infrastructure. 
 I decided to dive deep in this new field of technologies. Here you can see what happened.
 This project is an implementation of plant watering system based on raspberry pi computer, digital humidity and temperature sensor and servo.
 
+## Overal view
+<img src="https://www.dropbox.com/s/ifohfg3rbqbvjo7/PWO_Hardware_collage.jpg?dl=1" alt="Raspberry">
 
 ## Stack of technologies
 - [Johnny FIve](http://johnny-five.io/);
