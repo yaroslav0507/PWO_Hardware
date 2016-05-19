@@ -1,29 +1,43 @@
 'use strict';
 
-function config(server){
+function config(server) {
     global.io = require('socket.io')(server);
 
-    const deviceServo = require('./devices/servo');
+    var sensorData;
+    const sensor = require('./devices/dht-sensor')();
+    const deviceServo = require('./devices/servo')();
+    require('./devices/led')();
 
-    io.on('connection', function(socket) {
-        var sensorData;
-        const sensor = require('./devices/dht-sensor')();
+    function measureTempAndHumidity() {
+	sensorData = sensor.read();
 
-        function measureTempAndHumidity() {
-            sensorData = sensor.read();
-            io.emit('DHT_SENSOR_DATA', sensorData);
+	if (sensorData.humidity > process.env.CRITICAL_HUMIDITY) {
+	    console.log("Exceeded critical level of humidity!");
 
-            deviceServo(socket, function(servo) {
-                if(sensorData.humidity > process.env.CRITICAL_HUMIDITY){
-                    servo.min();
-                    servo.max()
-                } else {
-                    servo.stop();
-                }
-            });
-        }
-        setInterval(measureTempAndHumidity, process.env.DHT_SENSOR_FREQUENCY);
+	    deviceServo
+		.then(function (servo) {
+		    servo.min();
 
+		    setTimeout(function () {
+			servo.max();
+		    }, 500)
+		}, function () {
+		    servo.stop();
+		});
+	}
+    }
+    setInterval(measureTempAndHumidity, process.env.DHT_SENSOR_FREQUENCY);
+
+    io.on('connection', function (socket) {
+	socket.on('start.servo', function(deg) {
+	    deviceServo
+		.then(function (servo) {
+		    servo.to(deg);
+		});
+	});
+	setInterval(function () {
+	    sensorData ? socket.emit('DHT_SENSOR_DATA', sensorData) : null;
+	}, process.env.DHT_SENSOR_FREQUENCY);
     });
 }
 
