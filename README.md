@@ -4,11 +4,15 @@ There is much talk about the Internet of Things, about possibilities to control 
 I decided to dive deep in this new field of technologies. Here you can see what happened.
 This project is an implementation of plant watering system based on raspberry pi computer, digital humidity and temperature sensor and servo.
 
+## Overal view
+<img src="https://www.dropbox.com/s/ifohfg3rbqbvjo7/PWO_Hardware_collage.jpg?dl=1" alt="JavaScript Robotics">
 
 ## Stack of technologies
 - [Johnny FIve](http://johnny-five.io/);
 - [Express JS](http://expressjs.com/);
 - [Node JS](https://nodejs.org/);
+
+
 
 ## Running Locally
 First of all you need a raspberry pi (next rpi) and raspbian jessie installed on SD card. 
@@ -73,3 +77,12 @@ Ping scan just pings all the IP addresses to see if they respond. For each devic
     Nmap done: 256 IP addresses (4 hosts up) scanned in 2.41 seconds
     Here you can see a device with hostname raspberrypi has IP address 192.168.1.8.
 ```
+
+## SSH Connection
+<img align="right" src="https://www.dropbox.com/s/arhpkyheazk4kao/ssh_pi_pass.jpg?dl=1" alt="console" height="150px">
+
+Now when you have raspbian installed and you know the correct IP address of your PI we can start development.
+
+First of all open a comand line on your PC or laptop.
+enter: `ssh pi@<ip-address>` paste rpi's ip instead of <ip-address>
+You should see the next picture. Default password is `raspberry`.
