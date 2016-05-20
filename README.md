@@ -147,7 +147,7 @@ Specification:
 
 I used 3 pin AM2302 sensor. You can use DHT22, the are almost same. Here are technical characteristics.
 - Model DHT22
-- Power supply 3.3-6V DC
+- Power supply 3.3-6V DC 
 - Output signal digital signal via single-bus
 - Sensing element Polymer capacitor
 - Operating range humidity 0-100%RH; temperature -40~80Celsius
