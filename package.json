@@ -5,7 +5,6 @@
   "main": "index.js",
   "dependencies": {
     "johnny-five": "*",
-    "raspi-io": "*",
     "node-dht-sensor": "*",
     "express": "*",
     "serve-static": "*",
