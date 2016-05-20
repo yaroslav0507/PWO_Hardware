@@ -164,6 +164,11 @@ I used 3 pin AM2302 sensor. You can use DHT22, the are almost same. Here are tec
 2. Connect power wire (red) to the 17th pin of GPIO.
 3. Connect the pilot wire (orange) to the 7th pin of GPIO.
 
-#### GPIO Pins
+Now we can start application. Enter the project dirrectory `cd PWO_Hardware` execute `sudo node index.js`.
+App should start on raspberry. Now DHT sensor will react on humidity changes. When humidity reaches critical level servo is starting to work. You can connect it to any watering system and make it open and close after humidity reaches normal level again.
+
+#### GPIO Pins 
 <img src="https://www.dropbox.com/s/thwe1ri7hkgb91l/Screen%20Shot%202016-05-20%20at%202.33.11%20PM.png?dl=1" alt="DHT">
+
+
 
